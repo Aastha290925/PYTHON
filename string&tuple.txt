@@ -1,0 +1,559 @@
+1.Print multiple lines using single print statement. as – 
+                     I like “Python Programming” very much
+                     It is my favorite subject
+
+text = """I like "Python Programming" very much
+It is my favorite subject"""
+print(text)
+
+output:
+I like "Python Programming" very much
+It is my favorite subject
+
+==================================================================
+
+2.Print a part of the above string “very much” using the slice operator. 
+
+text = """I like "Python Programming" very much
+It is my favorite subject"""
+# Slicing the exact position of "very much" from the first line
+print(text[28:37])
+
+output:
+very much
+
+==================================================================
+
+3.Print the last 5 characters from the above given string
+
+text = """I like "Python Programming" very much
+It is my favorite subject"""
+print(text[-5:])
+
+output:
+bject
+
+==================================================================
+
+4.Print only the second line of the given string
+
+text = """I like "Python Programming" very much
+It is my favorite subject"""
+lines = text.split('\n')
+print(lines[1])
+
+output:
+It is my favorite subject
+
+==================================================================
+
+5.Print the string in reverse order.
+
+text = """I like "Python Programming" very much
+It is my favorite subject"""
+print(text[::-1])
+
+output:
+very much
+
+==================================================================
+
+6.Take two strings as input from the user and concatenate them.
+
+str1 = input("Enter first string: ")
+str2 = input("Enter second string: ")
+result = str1 + str2
+print(result)
+
+output:
+Enter first string: Hello
+Enter second string: World
+Hello World
+
+==================================================================
+
+7.Take a number and a string from the user and repeat the string for that many times.
+
+num = int(input("Enter a number: "))
+text = input("Enter a string: ")
+print(text * num)
+
+
+output:
+Enter a number: 3
+Enter a string: Python
+PythonPythonPython
+
+==================================================================
+
+8.Take an input character from the user and check whether that character is present in the above given string           	or not. – Using ‘in’ operator and using ‘not in’ operator
+
+text = 'I like "Python Programming" very much'
+char = input("Enter a character to search: ")
+
+# Using 'in' operator
+if char in text:
+    print(f"'{char}' is present in the string (Using 'in')")
+else:
+    print(f"'{char}' is NOT present in the string (Using 'in')")
+
+# Using 'not in' operator
+if char not in text:
+    print(f"'{char}' is NOT present in the string (Using 'not in')")
+else:
+    print(f"'{char}' is present in the string (Using 'not in')")
+
+output:
+Enter a character to search: P
+'P' is present in the string (Using 'in')
+'P' is present in the string (Using 'not in')
+
+==================================================================
+
+9.Create a menu driven program for string manipulation
+  a.Find the length of a string
+  b.Print the string in upper case
+  c.Print the string in lower case
+  d.Print the string with initial capital
+  e.Split the string
+
+text = input("Enter a string: ")
+print("Menu:\na. Length\nb. Uppercase\nc. Lowercase\nd. Titlecase\ne. Split")
+choice = input("Enter choice (a-e): ")
+
+if choice == 'a':
+    print("Length:", len(text))
+elif choice == 'b':
+    print("Upper:", text.upper())
+elif choice == 'c':
+    print("Lower:", text.lower())
+elif choice == 'd':
+    print("Title:", text.title())
+elif choice == 'e':
+    print("Split:", text.split())
+
+
+Enter a string: hello world
+Menu:
+a. Length
+b. Uppercase
+c. Lowercase
+d. Titlecase
+e. Split
+Enter choice (a-e): b
+Upper: HELLO WORLD
+
+==================================================================
+
+10.Take two strings as input s1 and s2 and check whether s2 is present in s1 or not.
+
+s1 = input("Enter main string (s1): ")
+s2 = input("Enter substring (s2): ")
+if s2 in s1:
+    print("s2 is present in s1")
+else:
+    print("s2 is NOT present in s1")
+
+output:
+Enter main string (s1): Learning Python
+Enter substring (s2): Python
+s2 is present in s1
+
+==================================================================
+
+11.If s2 is a part of s1 then print the 1st and last occurrences of it 
+
+s1 = input("Enter main string (s1): ")
+s2 = input("Enter substring (s2): ")
+if s2 in s1:
+    print("First occurrence index:", s1.find(s2))
+    print("Last occurrence index:", s1.rfind(s2))
+else:
+    print("s2 is not a part of s1")
+
+output:
+Enter main string (s1): apple pie apple tart
+Enter substring (s2): apple
+First occurrence index: 0
+Last occurrence index: 10
+
+==================================================================
+
+12.If s2 is present in s1 then also count number of times it occurs in s1.
+
+s1 = input("Enter main string (s1): ")
+s2 = input("Enter substring (s2): ")
+count = s1.count(s2)
+print("Occurrences:", count)
+
+output:
+Enter main string (s1): banana
+Enter substring (s2): an
+Occurrences: 2
+
+==================================================================
+
+13.Count total number of words in the string input by user.
+
+text = input("Enter a sentence: ")
+words = text.split()
+print("Total words:", len(words))
+
+output:
+Enter a sentence: Programming in Python is fun
+Total words: 5
+
+==================================================================
+
+14.Check if any vowel present in the given string or not. If it is there then count each vowel and also           	display total number of vowels present in the given string 
+
+text = input("Enter a string: ").lower()
+vowels = "aeiou"
+total_vowels = 0
+
+for v in vowels:
+    c = text.count(v)
+    print(f"Count of '{v}': {c}")
+    total_vowels += c
+
+print("Total number of vowels:", total_vowels)
+
+output:
+Enter a string: Hello World
+Count of 'a': 0
+Count of 'e': 1
+Count of 'i': 0
+Count of 'o': 2
+Count of 'u': 0
+Total number of vowels: 3
+
+==================================================================
+
+15.Copy the inputted string to another string by replacing the character ‘o’ with ‘@’ Eg. ‘Hello’ will be 	copied to another string as ‘Hell@’ and ‘Good Morning’ will become ‘G@@d M@rning’ (Without using replace())
+
+text = input("Enter a string: ")
+new_text = ""
+for char in text:
+    if char == 'o':
+        new_text += '@'
+    elif char == 'O':
+        new_text += '@'
+    else:
+        new_text += char
+print("New string:", new_text)
+
+
+output:
+Enter a string: Good Morning
+New string: G@@d M@rning
+
+
+==================================================================
+
+16.Create a tuple for name say t1 (FirstName, MiddleName, LastName)
+
+t1 = ("John", "Robert", "Doe")
+print(t1)
+
+output:
+('John', 'Robert', 'Doe')
+
+==================================================================
+
+17.Create a tuple say t2 for marks of 5 subjects 
+
+t2 = (75, 82, 90, 68, 88)
+print(t2)
+
+output:
+(75, 82, 90, 68, 88)
+
+==================================================================
+
+18.Make a total of all the marks and print it. (with and without using sum() method)
+
+t2 = (75, 82, 90, 68, 88)
+
+# With sum()
+total_with = sum(t2)
+
+# Without sum()
+total_without = 0
+for mark in t2:
+    total_without += mark
+
+print("Total using sum():", total_with)
+print("Total without using sum():", total_without)
+
+output:
+Total using sum(): 403
+Total without using sum(): 403
+
+==================================================================
+
+19.Make a tuple t3 having 2 elements as t1 and t2 (tuples created above) – It is called a nested tuple
+
+t1 = ("John", "Robert", "Doe")
+t2 = (75, 82, 90, 68, 88)
+t3 = (t1, t2)
+print(t3)
+
+output:
+(('John', 'Robert', 'Doe'), (75, 82, 90, 68, 88))
+
+==================================================================
+
+20.Take an input number and find whether that is present as an element in the tuple t3 or not.
+
+t1 = ("John", "Robert", "Doe")
+t2 = (75, 82, 90, 68, 88)
+t3 = (t1, t2)
+
+num = int(input("Enter a number to search in t3: "))
+found = False
+
+# Checking inside nested elements
+for item in t3:
+    if num in item:
+        found = True
+        break
+
+if found:
+    print(f"{num} is present in t3")
+else:
+    print(f"{num} is NOT present in t3")
+
+output:
+Enter a number to search in t3: 90
+90 is present in t3
+
+==================================================================
+
+21.Create a tuple of 5 fruits. Ask the user to input a fruit name and search that name in the given fruit 	tuple. Display suitable messages
+
+fruits = ("apple", "banana", "mango", "orange", "grape")
+search_fruit = input("Enter a fruit name to search: ").lower()
+
+if search_fruit in fruits:
+    print(f"Success: {search_fruit} is available in stock!")
+else:
+    print(f"Alert: Sorry, {search_fruit} is out of stock.")
+
+output:
+Enter a fruit name to search: mango
+Success: mango is available in stock!
+
+==================================================================
+
+22.Create a tuple of cities of Gujarat by taking user input.
+
+cities_list = []
+for i in range(5):
+    city = input(f"Enter city name {i+1} of Gujarat: ")
+    cities_list.append(city)
+
+cities_tuple = tuple(cities_list)
+print("Cities Tuple:", cities_tuple)
+
+output:
+Enter city name 1 of Gujarat: Surat
+Enter city name 2 of Gujarat: Ahmedabad
+Enter city name 3 of Gujarat: Vadodara
+Enter city name 4 of Gujarat: Rajkot
+Enter city name 5 of Gujarat: Bhavnagar
+Cities Tuple: ('Surat', 'Ahmedabad', 'Vadodara', 'Rajkot', 'Bhavnagar')
+
+==================================================================
+
+23.Find the length of name of each city in the above tuple. With and without len() method
+
+cities_tuple = ('Surat', 'Ahmedabad', 'Vadodara', 'Rajkot', 'Bhavnagar')
+
+for city in cities_tuple:
+    # With len()
+    len_with = len(city)
+    
+    # Without len()
+    len_without = 0
+    for char in city:
+        len_without += 1
+        
+    print(f"City: {city} | Length (with len): {len_with} | Length (without len): {len_without}")
+
+output:
+City: Surat | Length (with len): 5 | Length (without len): 5
+City: Ahmedabad | Length (with len): 9 | Length (without len): 9
+City: Vadodara | Length (with len): 8 | Length (without len): 8
+City: Rajkot | Length (with len): 6 | Length (without len): 6
+City: Bhavnagar | Length (with len): 9 | Length (without len): 9
+
+==================================================================
+
+24.Create a nested tuple t4 of your (name, (hobbies), (friends), degree) by taking user inputs.
+
+name = input("Enter your name: ")
+
+# Inputting hobbies as a tuple
+hobbies_list = input("Enter hobbies separated by commas: ").split(",")
+hobbies_tuple = tuple([h.strip() for h in hobbies_list])
+
+# Inputting friends as a tuple
+friends_list = input("Enter friends separated by commas: ").split(",")
+friends_tuple = tuple([f.strip() for f in friends_list])
+
+degree = input("Enter your degree: ")
+
+t4 = (name, hobbies_tuple, friends_tuple, degree)
+print("Nested Tuple t4:", t4)
+
+output:
+Enter your name: Aastha
+Enter hobbies separated by commas: drawing, reading
+Enter friends separated by commas: Riya, Diya
+Enter your degree: M.Sc. IT
+Nested Tuple t4: ('Aastha', ('drawing', 'reading'), ('Riya', 'Diya'), 'M.Sc. IT')
+
+==================================================================
+
+25.Find an element in the nested tuple (t4) and print its position if found, otherwise print “Not found”
+
+t4 = ('Aastha', ('drawing', 'reading'), ('Riya', 'Diya'), 'M.Sc. IT')
+search_item = input("Enter element to search in t4: ")
+found = False
+
+for i in range(len(t4)):
+    if t4[i] == search_item:
+        print(f"Found '{search_item}' at main index {i}")
+        found = True
+    elif isinstance(t4[i], tuple) and search_item in t4[i]:
+        sub_index = t4[i].index(search_item)
+        print(f"Found '{search_item}' at nested index t4[{i}][{sub_index}]")
+        found = True
+
+if not found:
+    print("Not found")
+
+
+output:
+Enter element to search in t4: reading
+Found 'reading' at nested index t4[1][1]
+
+==================================================================
+
+25.Take a tuple of 10 integer numbers and segregate odd and even numbers in 2 different tuples.
+
+numbers = (12, 7, 23, 44, 55, 68, 91, 100, 11, 4)
+even_list = []
+odd_list = []
+
+for num in numbers:
+    if num % 2 == 0:
+        even_list.append(num)
+    else:
+        odd_list.append(num)
+
+even_tuple = tuple(even_list)
+odd_tuple = tuple(odd_list)
+
+print("Original Tuple:", numbers)
+print("Even Tuple:", even_tuple)
+print("Odd Tuple:", odd_tuple)
+
+output:
+Original Tuple: (12, 7, 23, 44, 55, 68, 91, 100, 11, 4)
+Even Tuple: (12, 44, 68, 100, 4)
+Odd Tuple: (7, 23, 55, 91, 11)
+
+==================================================================
+
+26.Take a tuple input and print all the elements of it in reverse order
+
+user_input = input("Enter values separated by space: ").split()
+t = tuple(user_input)
+print("Reversed tuple elements:")
+for item in t[::-1]:
+    print(item)
+
+output:
+Enter values separated by space: red green blue yellow
+Reversed tuple elements:
+yellow
+blue
+green
+red
+
+==================================================================
+
+27.Copy the inputted string to another string by replacing the character ‘o’ with ‘@’ Eg. ‘Hello’ will be copied to another string as ‘Hell@’ and ‘Good Morning’ will become ‘G@@d M@rning’ (Without using replace())
+
+text = input("Enter a string: ")
+new_text = ""
+for char in text:
+    if char == 'o' or char == 'O':
+        new_text += '@'
+    else:
+        new_text += char
+print("New string:", new_text)
+
+output:
+Enter a string: Hello Good Morning
+New string: Hell@ G@@d M@rning
+
+==================================================================
+
+28.Take a string as an input from the user. Find total number of vowels in it. (Hint: take a tuple of vowels)
+
+vowels_tuple = ('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U')
+text = input("Enter a string: ")
+vowel_count = 0
+
+for char in text:
+    if char in vowels_tuple:
+        vowel_count += 1
+
+print("Total number of vowels:", vowel_count)
+
+output:
+Enter a string: Python Programming
+Total number of vowels: 4
+
+==================================================================
+
+29.Find the maximum and minimum numbers from the tuple without using min() and max().
+
+numbers = (45, 12, 89, 7, 64, 23)
+
+max_val = numbers[0]
+min_val = numbers[0]
+
+for num in numbers:
+    if num > max_val:
+        max_val = num
+    if num < min_val:
+        min_val = num
+
+print("Maximum Value:", max_val)
+print("Minimum Value:", min_val)
+
+output:
+Maximum Value: 89
+Minimum Value: 7
+
+==================================================================
+
+30.Take a tuple of string elements and print all the strings in reverse. Eg. st=(‘Pen’, ‘Marker’, ‘Pencil’,’Eraser’,’Scale’) o/p – (‘neP’, ‘rekraM’, ‘licnep’, ‘resarE’, ‘elacS’)
+
+st = ('Pen', 'Marker', 'Pencil', 'Eraser', 'Scale')
+reversed_list = []
+
+for item in st:
+    reversed_list.append(item[::-1])
+
+output_tuple = tuple(reversed_list)
+print(output_tuple)
+
+output:
+('neP', 'rekraM', 'licneP', 'resarE', 'elacS')
+
+
+==================================================================

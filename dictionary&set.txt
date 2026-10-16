@@ -1,0 +1,348 @@
+1.Create a dictionary of employees where empId will be the key and value will be the name of an employee
+
+employees = {
+    101: "Amit Sharma",
+    102: "Neha Patel",
+    103: "Rajesh Kumar",
+    104: "Pooja Shah"
+}
+print(employees)
+
+output:
+{101: 'Amit Sharma', 102: 'Neha Patel', 103: 'Rajesh Kumar', 104: 'Pooja Shah'}
+
+================================================
+
+2.Display how many employees are there in the dictionary.
+
+employees = {101: "Amit Sharma", 102: "Neha Patel", 103: "Rajesh Kumar", 104: "Pooja Shah"}
+count = len(employees)
+print("Total number of employees:", count)
+
+output:
+Total number of employees: 4
+
+================================================
+
+3.Display all empID and make a separate list of just IDs.
+
+employees = {101: "Amit Sharma", 102: "Neha Patel", 103: "Rajesh Kumar", 104: "Pooja Shah"}
+print("All empIDs:")
+for emp_id in employees:
+    print(emp_id)
+
+id_list = list(employees.keys())
+print("Separate List of IDs:", id_list)
+
+output:
+All empIDs:
+101
+102
+103
+104
+Separate List of IDs: [101, 102, 103, 104]
+
+================================================
+
+4.Display all employee names and take them to a separate list
+
+employees = {101: "Amit Sharma", 102: "Neha Patel", 103: "Rajesh Kumar", 104: "Pooja Shah"}
+print("All Employee Names:")
+for name in employees.values():
+    print(name)
+
+name_list = list(employees.values())
+print("Separate List of Names:", name_list)
+
+output:
+All Employee Names:
+Amit Sharma
+Neha Patel
+Rajesh Kumar
+Pooja Shah
+Separate List of Names: ['Amit Sharma', 'Neha Patel', 'Rajesh Kumar', 'Pooja Shah']
+
+================================================
+
+5.Take an empId from the user and check if that employee is there in the dictionary or not.
+
+employees = {101: "Amit Sharma", 102: "Neha Patel", 103: "Rajesh Kumar", 104: "Pooja Shah"}
+search_id = int(input("Enter empId to check: "))
+
+if search_id in employees:
+    print(f"Employee with ID {search_id} exists.")
+else:
+    print(f"Employee with ID {search_id} does NOT exist.")
+
+output:
+Enter empId to check: 102
+Employee with ID 102 exists.
+
+================================================
+
+6.If an empID is there in the dictionary then display the name of that employee or if not available then add 	an ID and Name of the employee in the dictionary
+
+employees = {101: "Amit Sharma", 102: "Neha Patel", 103: "Rajesh Kumar"}
+search_id = int(input("Enter empId: "))
+
+if search_id in employees:
+    print("Employee Name:", employees[search_id])
+else:
+    print("ID not found. Adding new employee details.")
+    new_name = input("Enter name for this new ID: ")
+    employees[search_id] = new_name
+    print("Updated Dictionary:", employees)
+
+output:
+Enter empId: 104
+ID not found. Adding new employee details.
+Enter name for this new ID: Pooja Shah
+Updated Dictionary: {101: 'Amit Sharma', 102: 'Neha Patel', 103: 'Rajesh Kumar', 104: 'Pooja Shah'}
+
+================================================
+
+
+7.Change the name of the employee of empID taken by the user
+
+employees = {101: "Amit Sharma", 102: "Neha Patel", 103: "Rajesh Kumar"}
+target_id = int(input("Enter empId to update name: "))
+
+if target_id in employees:
+    new_name = input("Enter the new name: ")
+    employees[target_id] = new_name
+    print("Update successful. Updated dictionary:", employees)
+else:
+    print("Employee ID not found.")
+
+output:
+Enter empId to update name: 101
+Enter the new name: Amit Kumar Sharma
+Update successful. Updated dictionary: {101: 'Amit Kumar Sharma', 102: 'Neha Patel', 103: 'Rajesh Kumar'}
+
+================================================
+
+8.Remove an employee whose ID is provided by the user
+
+employees = {101: "Amit Sharma", 102: "Neha Patel", 103: "Rajesh Kumar"}
+remove_id = int(input("Enter empId to remove: "))
+
+if remove_id in employees:
+    removed_name = employees.pop(remove_id)
+    print(f"Removed employee: {removed_name}")
+    print("Updated dictionary:", employees)
+else:
+    print("Employee ID not found.")
+
+output:
+Enter empId to remove: 103
+Removed employee: Rajesh Kumar
+Updated dictionary: {101: 'Amit Sharma', 102: 'Neha Patel'}
+
+================================================
+
+9.Take 5 names of students as an input from the user and create a dictionary with keys as their initials and 	value is a list as [age, degree, favorite subject]
+
+student_dict = {}
+
+for i in range(5):
+    name = input("Enter student name: ")
+    initials = "".join([part[0].upper() for part in name.split()])
+    
+    age = int(input("Enter age: "))
+    degree = input("Enter degree: ")
+    fav_subject = input("Enter favorite subject: ")
+    
+    student_dict[initials] = [age, degree, fav_subject]
+    print("-" * 20)
+
+print("Final Student Dictionary:", student_dict)
+
+output:
+Enter student name: Aastha Patel
+Enter age: 21
+Enter degree: M.Sc. IT
+Enter favorite subject: Python
+
+================================================
+ 
+10.Display the youngest student from the above dictionary.
+	
+student_dict = {
+    'AP': [21, 'M.Sc. IT', 'Python'],
+    'NS': [20, 'BCA', 'Java'],
+    'RK': [22, 'B.Tech', 'DS'],
+    'MD': [19, 'B.Sc', 'Maths'],
+    'SH': [23, 'M.Sc. IT', 'AI']
+}
+
+youngest_initials = None
+min_age = 999 
+
+for initials, details in student_dict.items():
+    age = details[0]
+    if age < min_age:
+        min_age = age
+        youngest_initials = initials
+
+print(f"The youngest student is '{youngest_initials}' with an age of {min_age}")
+
+output:
+The youngest student is 'MD' with an age of 19
+
+================================================
+
+11.Create a dictionary of students having rollno of the student is as key and value is a list of marks 	obtained by that student in 5 subjects
+
+marks_dict = {}
+for i in range(3):  # Scale to 3 for demo, works for any number
+    rollno = int(input("Enter Roll Number: "))
+    marks = []
+    print("Enter marks for 5 subjects:")
+    for j in range(5):
+        m = int(input(f"Subject {j+1} marks: "))
+        marks.append(m)
+    marks_dict[rollno] = marks
+    print("-" * 20)
+
+print("Student Marks Dictionary:", marks_dict)
+
+output:
+Enter Roll Number: 10
+Enter marks for 5 subjects:
+Subject 1 marks: 80
+Subject 2 marks: 85
+Subject 3 marks: 90
+Subject 4 marks: 75
+Subject 5 marks: 88
+
+================================================
+
+12.Create a dictionary from the above one, where key is rollno and value is (total of all subjects, percentage 	and grade ) a tuple of his result
+
+# Sample base marks data from Program 11
+marks_dict = {
+    101:,
+    102:,
+    103: [95, 92, 98, 94, 96]
+}
+
+result_dict = {}
+
+for rollno, marks in marks_dict.items():
+    total = sum(marks)
+    percentage = total / 5
+    
+    if percentage >= 85:
+        grade = 'A+'
+    elif percentage >= 70:
+        grade = 'A'
+    elif percentage >= 50:
+        grade = 'B'
+    else:
+        grade = 'C'
+        
+    result_dict[rollno] = (total, percentage, grade)
+
+print("Result Summary Dictionary:", result_dict)
+
+output:
+Result Summary Dictionary: {101: (418, 83.6, 'A'), 102: (308, 61.6, 'B'), 103: (475, 95.0, 'A+')}
+
+================================================
+
+13.Display the rollno who has scored highest marks (total)
+
+result_dict = {
+    101: (418, 83.6, 'A'), 
+    102: (308, 61.6, 'B'), 
+    103: (475, 95.0, 'A+')
+}
+
+highest_roll = None
+max_total = -1
+
+for rollno, result in result_dict.items():
+    total_marks = result[0]
+    if total_marks > max_total:
+        max_total = total_marks
+        highest_roll = rollno
+
+print(f"Roll Number {highest_roll} scored the highest total marks of {max_total}")
+
+output:
+Roll Number 103 scored the highest total marks of 475
+
+================================================
+
+14.Take user input for roll no of 5 students and their coma separated marks of 6 subjects (out of 50). Display 	the minimum and maximum marks of each subject in a separate dictionary object.
+
+all_student_marks = []
+
+for i in range(5):
+    roll = input(f"Enter Roll No for student {i+1}: ")
+    marks_input = input("Enter comma-separated marks for 6 subjects: ")
+    # Convert input string to list of integers
+    marks_list = [int(m.strip()) for m in marks_input.split(",")]
+    all_student_marks.append(marks_list)
+
+# Initializing min and max tracking for 6 subjects
+min_marks = [999] * 6
+max_marks = [-1] * 6
+
+for marks in all_student_marks:
+    for subj_idx in range(6):
+        if marks[subj_idx] < min_marks[subj_idx]:
+            min_marks[subj_idx] = marks[subj_idx]
+        if marks[subj_idx] > max_marks[subj_idx]:
+            max_marks[subj_idx] = marks[subj_idx]
+
+summary_dict = {
+    "Min Marks per Subject": min_marks,
+    "Max Marks per Subject": max_marks
+}
+
+print("Subject Performance Summary:", summary_dict)
+
+output:
+Enter Roll No for student 1: 1
+Enter comma-separated marks for 6 subjects: 40,45,30,35,48,42
+Enter Roll No for student 2: 2
+Enter comma-separated marks for 6 subjects: 35,48,38,40,41,39
+... (up to 5 students)
+Subject Performance Summary: {'Min Marks per Subject':, 'Max Marks per Subject':}
+
+================================================
+
+15.Create a dictionary of 6 fruits (by taking user input) and store their buying and selling price as a tuple 	value. Display the fruit name whose buying price is less than its selling price and also the fruit name 	whose buying price is more than its selling price. Display the fruit that has earned no profit no loss.
+
+fruit_store = {}
+
+for i in range(6):
+    fruit = input(f"Enter name of fruit {i+1}: ").lower()
+    bp = float(input("Enter Buying Price (CP): "))
+    sp = float(input("Enter Selling Price (SP): "))
+    fruit_store[fruit] = (bp, sp)
+    print("-" * 20)
+
+profit_fruits = []
+loss_fruits = []
+no_profit_loss = []
+
+for fruit, prices in fruit_store.items():
+    bp, sp = prices
+    if bp < sp:
+        profit_fruits.append(fruit)
+    elif bp > sp:
+        loss_fruits.append(fruit)
+    else:
+        no_profit_loss.append(fruit)
+
+print("Fruits with Profit (Buying < Selling):", profit_fruits)
+print("Fruits with Loss (Buying > Selling):", loss_fruits)
+print("Fruits with Break-even (No Profit No Loss):", no_profit_loss)
+
+output:
+Enter name of fruit 1: Apple
+Enter Buying Price (CP): 80
+Enter Selling Price (SP): 100
+================================================

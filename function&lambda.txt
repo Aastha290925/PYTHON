@@ -1,0 +1,699 @@
+1.function math-menu
+
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+def multiply(a, b):
+    return a * b
+
+def divide(a, b):
+    return a / b
+
+def floor_divide(a, b):
+    return a // b
+
+def power(a, b):
+    return a ** b
+operations = {'1': add, '2': subtract, '3': multiply, '4': divide, '5': floor_divide, '6': power}
+print('1 Add  2 Subtract  3 Multiply  4 Divide  5 Integer Divide  6 Power')
+choice = input('Choose: ')
+a = float(input('First number: '))
+b = float(input('Second number: '))
+if choice in operations:
+    try:
+        print('Result:', operations[choice](a, b))
+    except ZeroDivisionError:
+        print('Cannot divide by zero.')
+else:
+    print('Invalid choice.')
+
+output:
+1 Add  2 Subtract  3 Multiply  4 Divide  5 Integer Divide  6 Power
+Choose: 3
+First number: 45
+Second number: 12
+Result: 540.0
+
+================================================
+
+2.64:function math-menu
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+def multiply(a, b):
+    return a * b
+
+def divide(a, b):
+    return a / b
+
+def floor_divide(a, b):
+    return a // b
+
+def power(a, b):
+    return a ** b
+operations = {'1': add, '2': subtract, '3': multiply, '4': divide, '5': floor_divide, '6': power}
+print('1 Add  2 Subtract  3 Multiply  4 Divide  5 Integer Divide  6 Power')
+choice = input('Choose: ')
+a = float(input('First number: '))
+b = float(input('Second number: '))
+if choice in operations:
+    try:
+        print('Result:', operations[choice](a, b))
+    except ZeroDivisionError:
+        print('Cannot divide by zero.')
+else:
+    print('Invalid choice.')
+'''
+1 Add  2 Subtract  3 Multiply  4 Divide  5 Integer Divide  6 Power
+Choose: 3
+First number: 45
+Second number: 12
+Result: 540.0
+'''
+==================================================================
+
+2.area_calculators
+
+from math import pi
+
+def rectangle_area(width, length):
+    return width * length
+
+def triangle_area(height, base):
+    return 0.5 * height * base
+
+def circle_area(radius):
+    return pi * radius * radius
+print('Rectangle:', rectangle_area(5, 8))
+print('Triangle:', triangle_area(4, 6))
+print('Circle:', round(circle_area(3), 2))
+
+output:
+Rectangle: 40
+Triangle: 12.0
+Circle: 28.27
+
+==================================================================
+
+3.number system
+
+def to_binary(number):
+    return bin(number)[2:]
+
+def to_octal(number):
+    return oct(number)[2:]
+
+def to_hexadecimal(number):
+    return hex(number)[2:].upper()
+number = int(input('Enter a decimal number: '))
+print('Binary:', to_binary(number))
+print('Octal:', to_octal(number))
+print('Hexadecimal:', to_hexadecimal(number))
+
+output:
+Enter a decimal number: 55
+Binary: 110111
+Octal: 67
+Hexadecimal: 37
+
+==================================================================
+
+4.unique values
+
+def unique_values(numbers):
+    result = []
+    for number in numbers:
+        if number not in result:
+            result.append(number)
+    return result
+sample = [1, 2, 3, 3, 3, 3, 4, 5]
+print(unique_values(sample))
+
+output:
+[1, 2, 3, 4, 5]
+
+==================================================================
+
+5.multiply list
+
+def multiply_numbers(numbers):
+    product = 1
+    for number in numbers:
+        product *= number
+    return product
+numbers = [2, 3, 4, 5]
+print('Product:', multiply_numbers(numbers))
+
+output:
+Product: 120
+==================================================================
+
+6.number in range
+
+def in_range(number, start, end):
+    return start <= number <= end
+number = int(input('Enter number: '))
+start = int(input('Enter range start: '))
+end = int(input('Enter range end: '))
+print(in_range(number, start, end))
+
+output:
+Enter number: 40
+Enter range start: 20
+Enter range end: 60
+True
+==================================================================
+
+7.upper-lower-count
+
+def count_case(text):
+    upper = 0
+    lower = 0
+    for character in text:
+        if character.isupper():
+            upper += 1
+        elif character.islower():
+            lower += 1
+    return (upper, lower)
+text = input('Enter text: ')
+upper, lower = count_case(text)
+print('Uppercase:', upper)
+print('Lowercase:', lower)
+
+output:
+Enter text: heLLo world
+Uppercase: 2
+Lowercase: 8
+==================================================================
+
+8.prime_ckecker_range
+
+def is_prime(number):
+    if number < 2:
+        return False
+    for divisor in range(2, number):
+        if number % divisor == 0:
+            return False
+    return True
+number = int(input('Enter number: '))
+print('Prime:' if is_prime(number) else 'Not prime:', number)
+start = int(input('Range start: '))
+end = int(input('Range end: '))
+print([value for value in range(start, end + 1) if is_prime(value)])
+
+output:
+Enter number: 75
+Not prime: 75
+Range start: 40
+Range end: 50
+[41, 43, 47]
+
+==================================================================
+
+9.factorial
+
+def factorial(number):
+    result = 1
+    for value in range(2, number + 1):
+        result *= value
+    return result
+number = int(input('Enter a non-negative number: '))
+if number >= 0:
+    print('Factorial:', factorial(number))
+else:
+    print('Factorial is not defined for negative numbers.')
+
+output:
+Enter a non-negative number: 40
+Factorial: 815915283247897734345611269596115894272000000000
+
+==================================================================
+
+10.type-operations
+
+def perform_operations(first, second):
+    if type(first) == int and type(second) == int:
+        return (first + second, first * second)
+    return (str(first) + str(second), str(first) * int(second) if str(second).isdigit() else 'Cannot multiply')
+first = input('Enter first value: ')
+second = input('Enter second value: ')
+if first.isdigit() and second.isdigit():
+    first = int(first)
+    second = int(second)
+print(perform_operations(first, second))
+
+output:
+Enter first value: 20
+Enter second value: 40
+(60, 800)
+
+==================================================================
+
+11.find string
+
+def find_string(string1, string2='all'):
+    positions = []
+    start = 0
+    while True:
+        position = string1.find(string2, start)
+        if position == -1:
+            break
+        positions.append(position + 1)
+        start = position + 1
+    return positions
+text = 'Hello all, Good Morning to all.'
+word = input('Enter word (press Enter for all): ') or 'all'
+positions = find_string(text, word)
+print('Positions:' if positions else 'String not found.', positions)
+
+output:
+Enter word (press Enter for all): python
+String not found. []
+
+==================================================================
+
+12.fruit-operation
+
+fruits = ['Apple', 'Banana', 'Mango']
+
+def add_fruit(name):
+    fruits.append(name)
+
+def insert_fruit(name, position=1):
+    fruits.insert(position, name)
+
+def update_fruit(old_name, new_name):
+    if old_name in fruits:
+        fruits[fruits.index(old_name)] = new_name
+
+def remove_fruit(value):
+    if isinstance(value, int):
+        fruits.pop(value)
+    elif value in fruits:
+        fruits.remove(value)
+
+def arrange_fruits():
+    fruits.sort()
+add_fruit('Orange')
+insert_fruit('Grapes')
+update_fruit(old_name='Banana', new_name='Kiwi')
+remove_fruit('Mango')
+arrange_fruits()
+print('Global variables:', list(globals().keys()))
+print(fruits)
+
+output:
+Global variables: ['__name__', '__doc__', '__package__', '__loader__', '__spec__', '__builtins__', '__file__', '__cached__', 'fruits', 'add_fruit', 'insert_fruit', 'update_fruit', 'remove_fruit', 'arrange_fruits']
+['Apple', 'Grapes', 'Kiwi', 'Orange']
+
+===========================================================
+
+12.generate primes
+
+def generate_primes(count):
+    primes = []
+    number = 2
+    while len(primes) < count:
+        prime = True
+        for divisor in range(2, number):
+            if number % divisor == 0:
+                prime = False
+                break
+        if prime:
+            primes.append(number)
+        number += 1
+    return primes
+count = int(input('How many prime numbers? '))
+print(generate_primes(count))
+
+output:
+How many prime numbers? 2
+[2, 3]
+
+==================================================================
+
+13.mobile_dictionary
+
+mobiles = {}
+
+def create():
+    global mobiles
+    mobiles = {'Nokia': {'price': 5000, 'features': ['4G', 'Camera']}}
+
+def add_mobile(name, price, features):
+    mobiles[name] = {'price': price, 'features': features}
+
+def update_mobile(name, price):
+    if name in mobiles:
+        mobiles[name]['price'] = price
+
+def delete_mobile(name):
+    if name in mobiles:
+        del mobiles[name]
+create()
+add_mobile('Samsung', 18000, ['5G', 'AMOLED'])
+update_mobile('Nokia', 5500)
+delete_mobile('Samsung')
+print(mobiles)
+
+output:
+{'Nokia': {'price': 5500, 'features': ['4G', 'Camera']}}
+
+==================================================================
+
+14.map-string-analysis
+
+def analyze_word(word):
+    vowels = []
+    for vowel in 'aeiou':
+        count = word.lower().count(vowel)
+        if count > 0:
+            vowels.append({vowel: count})
+    return {word.upper(): vowels, 'length': len(word)}
+sentence = input('Enter a sentence: ')
+analysis = list(map(analyze_word, sentence.split()))
+print(analysis)
+
+output:
+Enter a sentence: i am a bscit student
+[{'I': [{'i': 1}], 'length': 1}, {'AM': [{'a': 1}], 'length': 2}, {'A': [{'a': 1}], 'length': 1}, {'BSCIT': [{'i': 1}], 'length': 5}, {'STUDENT': [{'e': 1}, {'u': 1}], 'length': 7}]
+
+==================================================================
+
+15.lambda-max-two
+
+maximum = lambda first, second: first if first > second else second
+print(maximum(25, 18))
+
+output:
+25
+
+===========================================================
+
+16.lambda-max-three
+
+maximum = lambda first, second, third: first if first >= second and first >= third else second if second >= third else third
+print(maximum(14, 27, 19))
+
+output:
+27
+
+===========================================================
+17.lambda-even-odd
+
+change_number = lambda number: number * 5 if number % 2 == 0 else number * 10
+number = int(input('Enter number: '))
+print(change_number(number))
+
+output:
+Enter number: 50
+250
+
+=================================================================
+
+18.filter-integers
+
+items = [10, 'Python', 20, 'List', 30.5, 40]
+integers = list(filter(lambda item: type(item) == int, items))
+print(integers)
+
+output:
+[10, 20, 40]
+
+===============================================================
+
+19.filter-strings-vowls
+
+items = [10, 'Python', 'Apple', 20, 'Orange', 'List']
+strings = list(filter(lambda item: type(item) == str, items))
+text = 'Hello Python World'
+without_vowels = ''.join(filter(lambda character: character.lower() not in 'aeiou', text))
+print('Strings:', strings)
+print('Without vowels:', without_vowels)
+
+output:
+Strings: ['Python', 'Apple', 'Orange', 'List']
+Without vowels: Hll Pythn Wrld
+
+===============================================================
+
+20.filter-even-odd
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8]
+even = list(filter(lambda number: number % 2 == 0, numbers))
+odd = list(filter(lambda number: number % 2 != 0, numbers))
+print('Even:', even)
+print('Odd:', odd)
+
+output:
+Even: [2, 4, 6, 8]
+Odd: [1, 3, 5, 7]
+
+===============================================================
+
+21.lambda-product-concat
+
+combine = lambda first, second: first * second if type(first) == int and type(second) == int else str(first) + str(second)
+print(combine(4, 5))
+print(combine('Hello ', 'Python'))
+
+output:
+20
+Hello Python
+
+==============================================================
+
+22.filter-palindrome-words
+
+words = ['madam', 'python', 'racecar', 'apple', 'level']
+palindromes = list(filter(lambda word: word == word[::-1], words))
+print(palindromes)
+
+output:
+['madam', 'racecar', 'level']
+
+============================================================
+
+23.sort-fruit-tuples
+
+fruits = [(120, 'Apple'), (20, 'Banana'), (50, 'Chikoo'), (100, 'Pineapple')]
+sorted_fruits = sorted(fruits, key=lambda fruit: fruit[0])
+print(sorted_fruits)
+
+output:
+[(20, 'Banana'), (50, 'Chikoo'), (100, 'Pineapple'), (120, 'Apple')]
+
+==========================================================
+
+24.filter-short-names
+
+students = ['Amit', 'Bhavna', 'Dax', 'Kiran', 'Rohit']
+result = list(filter(lambda name: len(name) < 6, students))
+print(result)
+
+output:
+['Amit', 'Dax', 'Kiran', 'Rohit']
+
+==========================================================
+
+25.filter-empty-string
+
+words = ['Python', '', 'List', '', 'Function']
+result = list(filter(lambda word: word != '', words))
+print(result)
+
+output:
+['Python', 'List', 'Function']
+
+===========================================================
+
+26.filter-negative-numbers
+
+numbers = [-5, 2, -1, 0, 7, -9]
+result = list(filter(lambda number: number >= 0, numbers))
+print(result)
+
+output:
+[2, 0, 7]
+
+==========================================================
+
+27.filter-duplicate-numbers
+numbers = [1, 2, 2, 3, 4, 4, 5]
+result = list(filter(lambda number: numbers.count(number) == 1, numbers))
+print(result)
+
+output:
+[1, 3, 5]
+
+===========================================================
+
+28.sort-student-by-age-name
+
+students = [{'name': 'Amit', 'age': 25}, {'name': 'Bina', 'age': 22}, {'name': 'Dax', 'age': 25}]
+result = sorted(students, key=lambda student: (student['age'], student['name']))
+print(result)
+
+output:
+[{'name': 'Bina', 'age': 22}, {'name': 'Amit', 'age': 25}, {'name': 'Dax', 'age': 25}]
+
+=============================================================
+
+29.lambda-average
+
+average = lambda *numbers: sum(numbers) / len(numbers)
+print(average(10, 20, 30, 40))
+
+output:
+25.0
+
+==============================================================
+
+30.add-or-difference
+
+first = [6, 5, 3, 9]
+second = [0, 1, 7, 7]
+result = list(map(lambda pair: pair[0] + pair[1] if pair[0] > pair[1] else pair[1] - pair[0], zip(first, second)))
+print(result)
+
+output:
+[6, 6, 4, 16]
+
+==============================================================
+
+31.map-uppercase-names
+
+names = ['Amit', 'Bina', 'Dax', 'Kiran']
+uppercase_names = list(map(lambda name: name.upper(), names))
+print(uppercase_names)
+
+output:
+['AMIT', 'BINA', 'DAX', 'KIRAN']
+
+===============================================================
+
+32.map-round-numbers
+
+numbers = [6.56773, 9.57668, 4.00914, 56.24241, 9.01344]
+whole_numbers = list(map(lambda number: round(number), numbers))
+two_decimals = list(map(lambda number: round(number, 2), numbers))
+print('Whole numbers:', whole_numbers)
+print('Two decimals:', two_decimals)
+
+output:
+Whole numbers: [7, 10, 4, 56, 9]
+Two decimals: [6.57, 9.58, 4.01, 56.24, 9.01]
+
+==================================================================
+
+33.map-squares
+numbers = [1, 2, 3, 4, 5]
+squares = list(map(lambda number: number * number, numbers))
+print(squares)
+
+output:
+[1, 4, 9, 16, 25]
+
+================================================================
+
+34.map-grades
+scores = [88, 92, 78, 95, 86]
+grade = lambda score: 'A' if score >= 90 else 'B' if score >= 80 else 'C' if score >= 70 else 'D' if score >= 60 else 'F'
+grades = list(map(grade, scores))
+print(grades)
+'''
+['B', 'A', 'C', 'A', 'B']
+'''
+================================================================
+
+35.reduce-sum
+
+from functools import reduce
+numbers = [10, 20, 30, 40]
+total = reduce(lambda first, second: first + second, numbers)
+print(total)
+
+output:
+100
+
+================================================================
+
+36.reduce-product
+from functools import reduce
+numbers = [2, 3, 4, 5]
+product = reduce(lambda first, second: first * second, numbers)
+print(product)
+
+output:
+120
+
+================================================================
+
+37.reduce maximum
+
+from functools import reduce
+numbers = [12, 45, 7, 31, 20]
+maximum = reduce(lambda first, second: first if first > second else second, numbers)
+print(maximum)
+
+output:
+45
+
+=================================================================
+
+38.matrix-transpose-lambda
+matrix = [[1, 2], [3, 4], [5, 6], [7, 8]]
+transpose = lambda rows: [list(column) for column in zip(*rows)]
+print(transpose(matrix))
+
+output:
+[[1, 3, 5, 7], [2, 4, 6, 8]]
+
+===============================================================
+
+39.recursive lambda factorial
+factorial = lambda number: 1 if number <= 1 else number * factorial(number - 1)
+number = int(input('Enter number: '))
+print(factorial(number))
+
+output:
+Enter number: 33
+8683317618811886495518194401280000000
+
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
