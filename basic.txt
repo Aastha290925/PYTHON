@@ -1,0 +1,488 @@
+1.
+
+name = "Your Full Name"
+roll_no = "Your Roll Number"
+programme = "M.Sc. IT"
+semester = "Semester 1"
+print(name)
+print(roll_no)
+print(programme)
+print(semester)
+
+output:
+Your Full Name
+Your Roll Number
+M.Sc. IT
+Semester 1
+
+================================================
+
+2.
+
+name = input("Enter your name: ")
+city = input("Enter your city: ")
+hobby = input("Enter your favourite hobby: ")
+print("Hii! My name is " + name + ". I am living in " + city + "i love " + hobby + ".")
+
+output:
+Enter your name:aastha
+Enter your city:surat
+Enter your favourite hobby:drawing
+Hii!My name is aastha.I am living in surat city.I love drawing.
+=================================================
+
+3.
+
+pri = float(input("Enter principal amount: "))
+rate = float(input("Enter annual rate (%): "))
+time = float(input("Enter time (years): "))
+interest = pri * rate * time / 100
+print("Simple interest:", round(interest, 2))
+print("Total amount:", round(pri + interest, 2))
+
+output:
+Enter principal amount: 33
+Enter annual rate (%): 5
+Enter time (years): 8
+Simple interest: 13.2
+Total amount: 46.2
+======================================================
+
+4.
+
+cel = float(input("Enter temperature in Celsius: "))
+fah = cel * 9 / 5 + 32
+kel = cel + 273.15
+print("Fahrenheit:", round(fah, 2), "F")
+print("Kelvin:", round(kel, 2), "K")
+
+output:
+Enter temperature in Celsius: 35
+Fahrenheit: 95.0 F
+Kelvin: 308.15 K
+
+======================================================
+5.
+
+l= float(input("Enter rectangle length: "))
+b= float(input("Enter rectangle breadth: "))
+print("Rectangle area:", round(l*b, 2))
+print("Rectangle perimeter:", round(2 * (l+b), 2))
+print("Circle area (radius = l):", round(pi * l** 2, 2))
+
+output:
+Enter rectangle length: 20
+Enter rectangle breadth: 10
+Rectangle area: 200.0
+Rectangle perimeter: 60.0
+Circle area (radius = length): 1256.64
+
+=======================================================
+
+6.salary calculator
+
+basic = float(input("Enter basic salary: "))
+hra = basic * 0.20
+da = basic * 0.10
+pf = basic * 0.12
+gross = basic + hra + da
+print("Gross salary:", round(gross, 2))
+print("Net salary:", round(gross - pf, 2))
+
+output:
+Enter basic salary: 6700
+Gross salary: 8710.0
+Net salary: 7906.0
+
+===============================================
+
+7.kilometre converter
+==
+km= float(input("Enter distance in kilometres: "))
+print("Metres:", round(km * 1000, 2))
+print("Centimetres:", round(km * 100000, 2))
+print("Miles:", round(km * 0.621371, 2))
+print("Feet:", round(km * 3280.84, 2))
+
+output:
+Enter distance in kilometres: 67
+Metres: 67000.0
+Centimetres: 6700000.0
+Miles: 41.63
+Feet: 219816.28
+
+===============================================
+
+8.calculate units
+
+units = float(input("Enter units:"))
+if units < 100:
+    bill = units * 2
+elif units > 100 and units <= 200:
+    bill = 200 + (units-100) * 3
+elif units > 200 and units <= 300:
+    bill = 500 + (units-200) * 5
+else: 
+    bill = 1000 + (units-300) * 7
+print("The units Is:",bill)
+
+output:
+Enter units:15
+The units Is: 30.0
+
+===============================================
+
+9.print table of n nos.
+
+i=1
+n=int(input("Enter Number:"))
+ans=None
+while i<=10:
+    ans=n*i
+    print(n,"*",i,"=",ans)
+    i+=1
+
+output:
+Enter Number:7
+7 * 1 = 7
+7 * 2 = 14
+7 * 3 = 21
+7 * 4 = 28
+7 * 5 = 35
+7 * 6 = 42
+7 * 7 = 49
+7 * 8 = 56
+7 * 9 = 63
+7 * 10 = 70
+
+===============================================
+
+10.cakculate speed.
+
+speed = float(input("Enter The Vehicle Speed In Km/h:"))
+if speed <= 60:
+    print("Fine: No Fine")
+elif 61 <= speed and speed <=80:
+    print("Fine : 500")
+elif 81 <= speed and speed <=100:
+    print("Fine : 1000")
+else:
+    print("Fine : 2000")
+
+output:
+Enter The Vehicle Speed In Km/h:70
+Fine : 500
+
+===============================================
+
+11.Armstrong
+
+n=int(input("Enter a Number:"))
+temp=n
+rev=0
+while(n!=0):
+    rem=n%10
+    rev=rev*10+(rem*rem*rem)
+    n=n/10
+if(temp==rev):
+    print("Number Is Armstrong")
+else:
+    print("Number is Not Armstrong")
+
+output:Enter a Number:67
+Number is Not Armstrong
+
+===============================================
+
+12.factorial of given no
+
+n=int(input("Enter Number:"))
+i=1
+ans=1
+while i<=n:
+    ans=ans*i
+    i+=1
+print("Factorial of given no is",ans)
+
+output:
+Enter Number:8
+Factorial of given no is 40320
+
+===============================================
+
+13.find fibbo upto n
+
+#n=10 1 1 2 3 5 8
+n=int(input("Enter Number:"))
+a,b=1,1
+print(a,end=" ")
+print(b,end=" ")  #1 1 2
+while(1):
+    c=a+b
+    a=b
+    b=c
+    if(c>n):
+        break
+    else:
+        print(c,end=" ")
+print("end")
+
+output:
+Enter Number:5
+1 1 2 3 5 end
+
+===============================================
+
+14.palindrone
+
+n=int(input("Enter a Number:"))
+temp=n
+rev=0
+while(n!=0):
+    rem=n%10
+    rev=(rev*10)+rem
+    n=n/10
+print('rev')
+if(temp==rev):
+    print("Number Is Palindrome")
+else:
+    print("Number Is not Palindrome")
+
+output:
+
+Enter a Number:5
+rev
+Number Is not Palindrome
+
+===============================================
+
+15.prime number
+
+n=int(input("Enter Number:"))
+cnt=0
+for i in range(1,n+1):
+    if(n%i==0):
+        cnt+=1
+    if(cnt>2):
+        break;
+print(cnt)
+if(cnt==2):
+    print(n,"is Prime Number")
+else:
+    print(n,"is not Prime Number")
+
+output:
+Enter Number:78
+3
+78 is not Prime Number
+
+===============================================
+
+16.income
+
+income = float(input("Enter Your monthly income:"))
+if income >= 100000:
+    print("Eligible for: Premium Loan")
+elif income >= 50000:
+    print("Eligible for: Standard Loan")
+elif income >= 25000:
+    print("Eligible for: Basic Loan")
+else:
+    print("Result: Not Eligible")
+
+output:
+Enter Your monthly income:6700
+Result: Not Eligible
+
+===============================================
+
+17.marks
+
+marks = float(input("Enter the students marks:"))
+if marks >=90:
+    grade ='A'
+if marks >=80:
+    grade ='B'
+if marks >=70:
+    grade ='C'
+if marks >=60:
+    grade ='D'
+else:
+    grade ='F'
+print("The Grade Is:",grade)
+
+output:
+Enter the students marks:78
+The Grade Is: D
+
+===============================================
+
+19.max number
+
+"""a,b=input("Enter two number:").split()
+if a>b:
+    print("Max Value Is:",a)
+else:
+    print("Max Value Is:",b)"""
+
+a=int(input("ENter number:"))
+b=int(input("ENter number:"))
+if a>b:
+    print("Max is a",a)
+else:
+    print("max is b",b)
+
+output:
+ENter number:78
+ENter number:67
+Max is a 78
+
+===============================================
+
+20.max for four numbers
+
+a,b,c,d=int(input("Enter Four Nos:")).split()
+if a>b and a>c and a>d:
+    print("Max Value Is:",a)
+elif b>a and b>c and b>d:
+    print("Max Value Is:",b)
+elif c>a and c>b and a>d:
+    print("Max Value Is:",c)
+else:
+    print("Max Value Is:",d)
+
+output:
+Enter Four Nos: 5 7 8 10
+Max value is:10
+
+===============================================
+
+21.movie 
+
+age = int(input("Enter Person Age:"))
+if age < 5:
+    price = "free"
+elif 5 <= age and age <=12:
+    price = "100"
+elif 13 <= age and age <=59:
+    price = "200"
+else:
+    price = "150"
+print("The Ticket Price is:",price)
+
+output:
+Enter Person Age:18
+The Ticket Price is: 200
+
+===============================================
+
+22.odd or even
+
+a = int(input("Enter Number:"))
+if a % 2 == 0:
+    print("Even Number")
+else:
+    print("Odd Number")
+
+output:
+Enter Number:89
+Odd Number
+
+===============================================
+
+23.pattern 1
+
+for i in range(1,6):
+    for j in range(1,i+1):
+        print(j,end=" ")
+    print()
+
+output:
+1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5 
+
+===============================================
+
+24.pattern 2
+
+for i in range(1,6):
+    k=5
+    for j in range(1,i+1):
+        print(k,end=" ")
+        k-=1
+    print()
+
+output:
+5 
+5 4 
+5 4 3 
+5 4 3 2 
+5 4 3 2 1
+
+===============================================
+
+25.pattern 3
+
+for i in range(65,70):
+    for j in range(65,i+1):
+        print(chr(j),end=" ")
+    print()
+
+output:
+
+A 
+A B 
+A B C 
+A B C D 
+A B C D E 
+
+===============================================
+
+26.pattern 4
+
+k=5
+for i in range(1,6):
+    for j in range(1,k):
+        print(" ",end=" ")
+    k=k-1
+    for j in range(1,i+1):
+        print(j,end=" ")
+    print()
+
+output:
+
+        1 
+      1 2 
+    1 2 3 
+  1 2 3 4 
+1 2 3 4 5 
+
+===============================================
+
+27.pattern 5
+
+for i in range(5,0,-1):
+    for j in range(1,i):
+        print(" ",end=" ")
+    for k in range(5,i-1,-1):
+        print(k,end=" ")
+    print()
+
+output:
+        5 
+      5 4 
+    5 4 3 
+  5 4 3 2 
+5 4 3 2 1 
+
+===============================================
+
+
+
+
+
+
+

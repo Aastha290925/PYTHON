@@ -1,0 +1,774 @@
+1.print first n nos.
+
+n=int(input("Enter Number:"))
+for i in range(1,n+1):
+    print(i)
+while(1):
+    c=a+b
+    a=b
+    b=c
+    if(c>n):
+        break
+    else:
+        print(c,end=" ")
+print("end")
+
+output:
+Enter Number:7
+1
+2
+3
+4
+5
+6
+7
+
+================================================
+
+2.
+#print first n nos.
+#n=int(input("Enter Number:"))
+#for i in range(1,n+1):
+    #print(i)
+
+#reverse
+#n=int(input("Enter Number:"))
+#for i in range(n,0,-1):
+    #print(i)
+
+#even num 20
+n=int(input("Enter Number:"))
+for i in range(20,0,-2):
+    print(i)
+
+output:
+Enter Number:7
+20
+18
+16
+14
+12
+10
+8
+6
+4
+2
+
+================================================
+
+3.x-x^2/2!-x^3/3!...x^n/n!
+
+n=int(input("Enter Number:"))
+x=int(input("Enter Number:"))
+sum=0
+flag=1
+f=1
+for i in range(1,n+1):
+    f=1
+    for k in range(1,i+1):
+        f=f*k
+    sum=sum+((x**i)*flag)/f
+    flag=flag*-1
+print(sum)
+
+output:
+Enter Number:4
+Enter Number:7
+-60.37500000000001
+
+================================================
+
+4.print first n nos.
+
+n=int(input("Enter Number:"))
+for i in range(1,n+1):
+    print(i)
+
+output:
+Enter Number:4
+1
+2
+3
+4
+
+================================================
+
+5.write a program to find the length of a list
+
+l1= [10, 20, 30, 40, 50]
+list_length = len(l1)
+print("The length of the list is:", list_length)
+
+output:
+The length of the list is: 5
+
+================================================
+
+6.write a Python program to reverse a list without using the reverse()
+
+l1 = [10, 20, 30, 40, 50]
+
+reversed= l1[::-1]
+
+print(reversed)
+
+output:
+[50, 40, 30, 20, 10]
+
+================================================
+
+7.write a Python program to sum all elements in a list
+
+l1 = [10, 20, 30, 40, 50]
+
+total = sum(l1)
+
+print(total)
+
+output:
+150
+
+================================================
+
+8.write a Python program to find the maximum and minimum without using Max()/ min()
+
+l1= [4, 12, 1, 8, 23, 7]
+
+max = l1[0]
+min = l1[0]
+
+for num in l1:
+    if num > max:
+        max = num
+    if num < min:
+        min = num
+
+print("Maximum:",max)
+print("Minimum:",min)
+
+output:
+Maximum: 23
+Minimum: 1
+
+================================================
+
+9.write a Python program to check if an element exist in a list
+
+lan = ["Python", "Java", "C++", "Go"]
+search_element = "Python"
+
+if search_element in lan:
+    print(search_element," exists in the list.")
+else:
+    print(search_element, " does not exist in the list.")
+
+output:
+Python  exists in the list.
+
+================================================
+
+10.append,insert,remove
+
+num=[10,20,30,40,50,60,70]
+num.append(40)
+print("After Append:",num)
+num.insert(2,15)
+print("After Insert:",num)
+num.remove(20)
+print("After Remove:",num)
+
+output:
+After Append: [10, 20, 30, 40, 50, 60, 70, 40]
+After Insert: [10, 20, 15, 30, 40, 50, 60, 70, 40]
+After Remove: [10, 15, 30, 40, 50, 60, 70, 40]
+
+================================================
+
+11.simple python code for program to merge two list into one
+
+l1 = [1, 2, 3]
+l2 = [4, 5, 6]
+
+merge = l1 + l2
+
+print(merge)
+
+output:
+[1, 2, 3, 4, 5, 6]
+
+================================================
+
+12.write a Python program to remove duplicates from a list
+
+numbers = [1, 2, 2, 3, 4, 4, 4, 5, 1]
+
+unique_num = set(numbers)
+hello=list(unique_num)
+
+print("Original list:",numbers)
+print("Without duplicates:",hello)
+
+output:
+Original list: [1, 2, 2, 3, 4, 4, 4, 5, 1]
+Without duplicates: [1, 2, 3, 4, 5]
+
+================================================
+
+13.write a Python program to find the average of numbers in a list
+
+num = [10, 20, 30, 40, 50]
+if len(num) > 0:
+    average = sum(num) / len(num)
+    print("The average is:",average)
+else:
+    print("The list is empty. Cannot calculate average.")
+
+output:
+The average is: 30.0
+
+================================================
+
+14.Write a program to Access the first, last, and middle elements. 
+
+l1=[10,20,30,40,50,60,70]
+
+first=l1[0]
+last=l1[-1]
+
+middle=len(l1)//2
+middle_ele=l1[middle]
+
+print("First Number:",first)
+print("Middle Number:",middle_ele)
+print("last Number:",last)
+
+output:
+First Number: 10
+Middle Number: 40
+last Number: 70
+
+================================================
+
+15.Write a program to Count how many times a value appears in a list. 
+
+numbers = [1,2,3,4,5,7,8,2,2,9]
+target = 2
+occurrences = numbers.count(target)
+
+print("Original list:", numbers)
+print(f"The number {target} appears {occurrences} times.")
+
+output:
+Original list: [1, 2, 3, 4, 5, 7, 8, 2, 2, 9]
+The number 2 appears 3 times.
+
+================================================
+
+16.Write a program to Check if an element exists in a list. 
+
+num=[10,20,30,40,50]
+
+element=int(input("Enter Element:"))
+if element in num:
+    print("element exists")
+else:
+    print("Element does not exist")
+
+
+string=['hello','aastha','krishna','deeti']
+
+element=input("Enter Element:")
+if element in string:
+    print("element exists")
+else:
+    print("Element does not exist")
+
+output:
+Enter Element:30
+element exists
+Enter Element:67
+Element does not exist
+
+================================================
+
+17.Write a program to Sort a list in ascending and descending order (without sort()).
+
+a=[3,6,7,8,9,4]
+n=len(a)
+for i in range(n):
+    for j in range(0,n-1):
+        if a[j]>a[j+1]:
+            a[j],a[j+1]=a[j+1],a[j]
+print("Assending",a)
+
+a=[3,6,7,8,9,4]
+n=len(a)
+for i in range(n):
+    for j in range(0,n-1):
+        if a[j]<a[j+1]:
+            a[j],a[j+1]=a[j+1],a[j]
+print("Descending",a)
+
+output:
+Assending [3, 4, 6, 7, 8, 9]
+Descending [9, 8, 7, 6, 4, 3]
+
+================================================
+
+18.Write a program to Copy a list (shallow copy) and show it doesn't affect the original.
+ 
+original=[10,20,30,40,50]
+
+copied=original.copy()
+
+copied[0]=99
+copied.append(45)
+
+print("Original list:",original)
+print("copied list:",copied)
+
+output:
+Original list: [10, 20, 30, 40, 50]
+copied list: [99, 20, 30, 40, 50, 45]
+
+================================================
+
+19.Write a program to Remove duplicates from a list. 
+
+num=[1,2,3,3,3,4,5,6,6,7,8]
+unique=list(set(num))
+print("Original List:",num)
+print("Without Duplication:",unique)
+
+output:
+Original List: [1, 2, 3, 3, 3, 4, 5, 6, 6, 7, 8]
+Without Duplication: [1, 2, 3, 4, 5, 6, 7, 8]
+
+================================================
+
+20.Write a program to Convert a list of strings to a list of integers
+
+string=['10','20','30','40']
+int=[int(num) for num in string]
+
+print("Original list:",string)
+print("Converted list",int)
+
+output:
+Original list: ['10', '20', '30', '40']
+Converted list [10, 20, 30, 40]
+
+================================================
+
+21.Write a program to Find the average of numbers in a list.
+
+num=[10,20,30,40,50,60]
+if  len(num)>0:
+    ave=sum(num)/len(num)
+    print("The Average of the list:",ave)
+else:
+    print("The list is empty")
+
+output:
+The Average of the list: 35.0
+
+================================================
+
+22.Write a program to Find the second largest/smallest number in a list.
+
+num = [12, 45, 2, 41, 31, 10, 4, 10, 45]
+unique = list(set(num))
+
+if len(unique) < 2:
+    print("The list needs at least two unique numbers.")
+else:
+    unique.sort()
+    second_smallest = unique[1]   
+    second_largest = unique[-2]   
+    print("Original list:", num)
+    print("Second smallest number:", second_smallest)
+    print("Second largest number:", second_largest)
+
+output:
+Original list: [12, 45, 2, 41, 31, 10, 4, 10, 45]
+Second smallest number: 4
+Second largest number: 4
+
+================================================
+
+23.Write a program to Split a list into chunks of size n. 
+
+my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+n = 4
+chunks = []
+
+for i in range(0, len(my_list), n):
+    chunk = my_list[i : i + n]
+    chunks.append(chunk)
+
+print("Original list:", my_list)
+print(f"Chunks of size {n}:", chunks)
+
+output:
+Original list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+Chunks of size 4: [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10]]
+
+================================================
+
+24.Write a program to Flatten a nested list (e.g., [[1,2],[3,4]] → [1,2,3,4]).
+
+nested= [[1,2],[3,4]]
+list = []
+for sublist in nested:
+    for item in sublist:
+        list.append(item)
+
+print("Original nested list:", nested)
+print("Flattened list:",list)
+
+output:
+Original nested list: [[1, 2], [3, 4]]
+Flattened list: [1, 2, 3, 4]
+
+================================================
+
+25.Write a program to Find common elements between two lists. 
+l1 = ['hello','aastha','krishna','hepi']
+l2 = ['hepi','prutha','aastha','kunj']
+common= list(set(l1) & set(l2))
+
+print("List 1:", l1)
+print("List 2:", l2)
+print("Common elements:",common)
+
+output:
+List 1: ['hello', 'aastha', 'krishna', 'hepi']
+List 2: ['hepi', 'prutha', 'aastha', 'kunj']
+Common elements: ['hepi', 'aastha']
+
+================================================
+
+26.Write a program to Find elements present in one list but not another.
+
+l1 = [1, 2, 3, 4, 5]
+l2 = [4, 5, 6, 7, 8]
+unique = list(set(l1) - set(l2))
+
+print("List 1:", l1)
+print("List 2:", l2)
+print("Elements in List 1 but not in List 2:", unique)
+
+output:
+List 1: [1, 2, 3, 4, 5]
+List 2: [4, 5, 6, 7, 8]
+Elements in List 1 but not in List 2: [1, 2, 3]
+
+================================================
+
+27.Write a program to Rotate a list left/right by n positions
+
+list = [10, 20, 30, 40, 50, 60]
+n = 2 
+shift = n % len(list)
+
+left = list[shift:] + list[:shift]
+right = list[-shift:] + list[:-shift]
+
+print("Original List:",list)
+print(f"Rotated Left by {n}:",left)
+print(f"Rotated Right by {n}:",right)
+
+output:
+Original List: [10, 20, 30, 40, 50, 60]
+Rotated Left by 2: [30, 40, 50, 60, 10, 20]
+Rotated Right by 2: [50, 60, 10, 20, 30, 40]
+
+================================================
+
+28.Write a program to Remove all occurrences of a specific value.
+
+numbers = [1, 2, 3, 2, 4, 2, 5]
+target = 2
+
+filtered_numbers = [item for item in numbers if item != target]
+
+print("Original list:", numbers)
+print(f"List after removing all {target}s:", filtered_numbers)
+
+output:
+Original list: [1, 2, 3, 2, 4, 2, 5]
+List after removing all 2s: [1, 3, 4, 5]
+
+================================================
+
+29.Write a program to Find all pairs in a list that sum to a target value.
+
+numbers = [2, 4, 3, 5, 7, 8, 9, 1]
+target_sum = 10
+pairs = []
+
+for i in range(len(numbers)):
+    for j in range(i + 1, len(numbers)):
+        if numbers[i] + numbers[j] == target_sum:
+            pairs.append((numbers[i], numbers[j]))
+
+print("Pairs (Nested Loop):", pairs)
+ 
+output:
+Pairs (Nested Loop): [(2, 8), (3, 7), (9, 1)]
+
+================================================
+
+30.Write a program to Separate even and odd numbers into two lists.
+ 
+numbers = [12, 7, 9, 24, 15, 42, 3, 8]
+even= []
+odd= []
+for num in numbers:
+    if num % 2 == 0:
+        even.append(num)
+    else:
+        odd.append(num)
+print("Original List:", numbers)
+print("Even Numbers:", even)
+print("Odd Numbers:", odd)
+
+output:
+Original List: [12, 7, 9, 24, 15, 42, 3, 8]
+Even Numbers: [12, 24, 42, 8]
+Odd Numbers: [7, 9, 15, 3]
+
+================================================
+
+31.Write a program to Find the frequency of each element (build a dictionary).
+
+items = ['apple', 'banana', 'apple', 'cherry', 'banana', 'apple']
+dict = {}
+for item in items:
+    if item in dict:
+        dict[item] += 1 
+    else:
+        dict[item] = 1 
+
+print("Original List:",items)
+print("Frequency Dictionary:",dict)
+
+output:
+Original List: ['apple', 'banana', 'apple', 'cherry', 'banana', 'apple']
+Frequency Dictionary: {'apple': 3, 'banana': 2, 'cherry': 1}
+
+================================================
+
+32.Write a program to Swap two elements at given positions.
+l1 = [10, 20, 30, 40, 50]
+pos1 = 1 
+pos2 = 3  
+
+l1[pos1],l1[pos2] = l1[pos2],l1[pos1]
+print("List after swapping:",l1)
+
+output:
+List after swapping: [10, 40, 30, 20, 50]
+
+================================================
+
+33.Write a program to Check if a list is a palindrome
+
+l1 = [1, 2, 3, 2, 1]
+l2 = [1, 2, 3, 4, 5]
+if l1 == l1[::-1]:
+    print(l1,"is a palindrome!")
+else:
+    print(l1,"is NOT a palindrome.")
+
+if l2 == l2[::-1]:
+    print(l1,"is a palindrome!")
+else:
+    print(l2,"is NOT a palindrome.")
+
+output:
+[1, 2, 3, 2, 1] is a palindrome!
+[1, 2, 3, 4, 5] is NOT a palindrome.
+
+================================================
+
+34.Write a program to Find the index of the first/last occurrence of an element
+l1 = [10, 20, 30, 20, 40, 20, 50]
+target = 20
+
+first= None
+last= None
+
+
+for index in range(len(l1)):
+    if l1[index] == target:
+        if first is None:
+            first=index
+        last=index
+
+print("First Index (Loop):",first)
+print("Last Index (Loop):",last)
+
+output:
+First Index (Loop): 1
+Last Index (Loop): 5
+
+================================================
+
+35.Write a program to Remove None or empty values from a list. 
+mixel1= [10, None, "apple", "", 25, [], "banana", False, 0]
+cleanl1= [
+    item for item in mixel1 
+    if item is not None and item != "" and item != []
+]
+
+print("Original List:", mixel1)
+print("Cleaned List :", cleanl1)
+
+output:
+Original List: [10, None, 'apple', '', 25, [], 'banana', False, 0]
+Cleaned List : [10, 'apple', 25, 'banana', False, 0]
+
+================================================
+
+36.Write a program to Interleave two lists (e.g., [1,3,5] and [2,4,6] → [1,2,3,4,5,6]).
+l1 = [1, 3, 5]
+l2 = [2, 4, 6]
+interleave =[]
+for i in range(len(l1)):
+    interleave.append(l1[i])
+    interleave.append(l1[i])
+
+print("List 1:", l1)
+print("List 2:", l1)
+print("Interleaved List:", interleave)
+
+output:
+List 1: [1, 3, 5]
+List 2: [1, 3, 5]
+Interleaved List: [1, 1, 3, 3, 5, 5]
+
+================================================
+
+37.Write a program to Find the intersection, union, and difference of two lists
+l1 = [10,20,30,40,50]
+l2= [10,40,30,60,70,80]
+
+set1 = set(l1)
+set2 = set(l2)
+
+intersection= list(set1 & set2)
+union= list(set1 | set2)
+difference= list(set1 - set2)
+
+print("List 1:", l1)
+print("List 2:", l2)
+print("Intersection :", intersection)
+print("Union        :", union)
+print("Difference   :", difference)
+
+output:
+List 1: [10, 20, 30, 40, 50]
+List 2: [10, 40, 30, 60, 70, 80]
+Intersection : [40, 10, 30]
+Union        : [70, 40, 10, 80, 50, 20, 60, 30]
+Difference   : [50, 20]
+
+================================================
+
+38.Write a program to Find the longest consecutive sequence of numbers.
+numbers = [100, 4, 200, 1, 3, 2,]
+longest = 0
+
+for num in numbers:
+    count = 1
+    while (num + count) in numbers:
+        count += 1
+    if count > longest:
+        longest = count
+
+print("Longest sequence length:", longest)
+
+output:
+Longest sequence length: 4
+================================================
+
+39.Write a program to Create a list of squares of numbers 1–20 using a comprehension.
+squares = [x**2 for x in range(1, 21)]
+
+print(squares)
+
+output:
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400]
+
+================================================
+
+40.Write a program to Filter out all vowels from a list of characters
+chars = ['a', 'b', 'c', 'e', 'f', 'i', 'g', 'o', 'z']
+vowels = "aeiouAEIOU"
+novowels = []
+
+for char in chars:
+    if char not in vowels:
+        novowels.append(char)
+
+print("Without vowels (Loop):", novowels)
+
+output:
+Without vowels (Loop): ['b', 'c', 'f', 'g', 'z']
+
+================================================
+
+41.Write a program to Create a list of tuples (number, square) for 1–10.
+number_squares = [(x, x**2) for x in range(1, 11)]
+
+print(number_squares)
+
+#Other
+
+number_squares = []
+for x in range(1, 11):
+    pair = (x, x**2)
+    number_squares.append(pair)
+
+print("Using Loop:", number_squares)
+
+output:
+[(1, 1), (2, 4), (3, 9), (4, 16), (5, 25), (6, 36), (7, 49), (8, 64), (9, 81), (10, 100)]
+Using Loop: [(1, 1), (2, 4), (3, 9), (4, 16), (5, 25), (6, 36), (7, 49), (8, 64), (9, 81), (10, 100)]
+
+================================================
+
+42.Write a program to Flatten a 2D list using a nested comprehension.
+matrix = [[1, 2], [3, 4], [5, 6]]
+flat_list=[]
+
+for sublist in matrix:
+    for item in sublist:
+        flat_list.append(item)
+
+print("Original 2D list:", matrix)
+print("Flattened list   :", flat_list)
+
+output:
+Original 2D list: [[1, 2], [3, 4], [5, 6]]
+Flattened list   : [1, 2, 3, 4, 5, 6]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
